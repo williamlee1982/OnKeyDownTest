@@ -2,18 +2,16 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+Test key press in the following text field.
 
-<MudTextField AdornmentColor="Color.Secondary" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Outlined.Info" Label="Test KeyPress Event Here" @ref="LotIdTextField" OnKeyPress="btnView_Clicked" Clearable="true" @bind-Value="@LotId" Variant="Variant.Outlined" />
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<MudTextField AdornmentColor="Color.Secondary" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Outlined.Info" Label="Test KeyPress Event Here" @ref="TestTextField" OnKeyPress="btnView_Clicked" Clearable="true" @bind-Value="@LotId" Variant="Variant.Outlined" />
 
 @code {
     protected string? LotId { get; set; } = "";
-    protected MudTextField<string?>? LotIdTextField;
+    protected MudTextField<string?>? TestTextField;
     protected void btnView_Clicked(KeyboardEventArgs eventArgs)
     {
+        //this event won't be fired on Mac
         Console.WriteLine("keydown event fired!");
-        //lotinfoChild!.enter(LotIdTextField!, eventArgs);
     }
 }
